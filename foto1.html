@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu</title>
+
+<style>
+body{
+margin:0;
+background:white;
+}
+
+.tela{
+position:relative;
+width:100%;
+max-width:739px;
+margin:auto;
+}
+
+.tela img{
+width:100%;
+display:block;
+}
+
+.cliqueMenu{
+position:absolute;
+left:7%;
+top:51.5%;
+width:86%;
+height:5.5%;
+cursor:pointer;
+}
+
+.cliqueCarteira{
+position:absolute;
+left:6%;
+top:22%;
+width:88%;
+height:18%;
+cursor:pointer;
+display:none;
+}
+
+.seta{
+position:absolute;
+right:13%;
+bottom:11%;
+width:80px;
+height:80px;
+cursor:pointer;
+display:none;
+}
+</style>
+
+<script>
+let fotos=[
+"foto3a.jpg",
+"foto3b.jpg",
+"foto3c.jpg",
+"foto3d.jpg"
+];
+
+let atual=0;
+
+function abrirCarteira(){
+document.getElementById("foto").src="foto2.jpg";
+document.querySelector(".cliqueMenu").style.display="none";
+document.querySelector(".cliqueCarteira").style.display="block";
+}
+
+function abrirIdentidade(){
+document.getElementById("foto").src=fotos[0];
+document.querySelector(".cliqueCarteira").style.display="none";
+document.querySelector(".seta").style.display="block";
+}
+
+function proximaFoto(){
+atual++;
+if(atual>=fotos.length){
+atual=0;
+}
+document.getElementById("foto").src=fotos[atual];
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="tela">
+
+<img id="foto" src="foto1.jpg">
+
+<div class="cliqueMenu" onclick="abrirCarteira()"></div>
+
+<div class="cliqueCarteira" onclick="abrirIdentidade()"></div>
+
+<div class="seta" onclick="proximaFoto()"></div>
+
+</div>
+
+</body>
+</html>

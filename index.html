@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no">
+
+  <title>Identidade Escolar - Simulação</title>
+
+  <!-- Ícone do site/app -->
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Identidade Escolar">
+
+  <style>
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      background:#ffffff;
+      font-family:Arial, Helvetica, sans-serif;
+      overflow:hidden;
+    }
+
+    /* Tela de carregamento */
+
+    .splash{
+      position:fixed;
+      width:100%;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      background:white;
+    }
+
+    /* Logo */
+
+    .logo{
+      width:260px;
+      max-width:70%;
+      height:auto;
+      margin-bottom:45px;
+    }
+
+    /* Carregamento */
+
+    .loader{
+      width:42px;
+      height:42px;
+
+      border:5px solid #e5e5e5;
+      border-top:5px solid #1351b4;
+
+      border-radius:50%;
+
+      animation:girar 0.8s linear infinite;
+    }
+
+    @keyframes girar{
+      from{
+        transform:rotate(0deg);
+      }
+
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    /* Aviso escolar */
+
+    .simulacao{
+      position:absolute;
+      bottom:35px;
+
+      font-size:12px;
+      font-weight:bold;
+      letter-spacing:1px;
+
+      color:#777;
+
+      opacity:0.75;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="splash">
+
+    <img
+      src="logo.png"
+      class="logo"
+      alt="Logo"
+    >
+
+    <div class="loader"></div>
+
+    <div class="simulacao">
+      SIMULAÇÃO ESCOLAR
+    </div>
+
+  </div>
+
+  <script>
+
+    /*
+    Depois de 3 segundos
+    abre sua próxima página.
+    */
+
+    setTimeout(function(){
+
+      window.location.href = "foto1.html";
+
+    },3000);
+
+  </script>
+
+</body>
+</html>
